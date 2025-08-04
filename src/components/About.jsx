@@ -22,7 +22,7 @@ const WhyCybertraits = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-10">
+    <section  id="about" className="bg-white py-16 px-4 sm:px-6 lg:px-10">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-12 items-center">
         {/* Text Content */}
         <div className="flex-1 space-y-8">

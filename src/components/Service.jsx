@@ -18,7 +18,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "6 Weeks",
     level: "Beginner",
-    price: "₹ 0",
+  
     icon: <FaBug />,
     modules: [
       "Linux Basics",
@@ -34,7 +34,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "8 Weeks",
     level: "Advanced",
-    price: "₹ 19,999",
+    
     icon: <FaNetworkWired />,
     modules: [
       "Network Layers & Protocols",
@@ -50,7 +50,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "6 Weeks",
     level: "Intermediate",
-    price: "₹ 14,999",
+   
     icon: <FaBug />,
     modules: [
       "OWASP Top 10",
@@ -66,7 +66,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "4 Weeks",
     level: "Intermediate",
-    price: "₹ 9,999",
+  
     icon: <FaBug />,
     modules: [
       "REST & SOAP Basics",
@@ -82,7 +82,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "5 Weeks",
     level: "Advanced",
-    price: "₹ 12,999",
+    
     icon: <FaBug />,
     modules: [
       "Android & iOS Basics",
@@ -98,7 +98,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "4 Weeks",
     level: "Advanced",
-    price: "₹ 17,999",
+    
     icon: <FaBug />,
     modules: [
       "Windows Internals",
@@ -114,7 +114,7 @@ const allCourses = [
     category: "Red Teaming",
     duration: "6 Weeks",
     level: "Advanced",
-    price: "₹ 21,999",
+   
     icon: <MdSecurity />,
     modules: [
       "Cloud Architecture",
@@ -130,7 +130,7 @@ const allCourses = [
     category: "Blue Teaming",
     duration: "6 Weeks",
     level: "Intermediate",
-    price: "₹ 15,999",
+  
     icon: <RiShieldUserLine />,
     modules: [
       "SIEM Tools (Splunk, ELK)",
@@ -146,7 +146,7 @@ const allCourses = [
     category: "Blue Teaming",
     duration: "5 Weeks",
     level: "Advanced",
-    price: "₹ 13,999",
+    
     icon: <FaShieldAlt />,
     modules: [
       "Evidence Collection",
@@ -162,7 +162,7 @@ const allCourses = [
     category: "Programming",
     duration: "4 Weeks",
     level: "Beginner",
-    price: "₹ 0",
+   
     icon: <FaLaptopCode />,
     modules: [
       "Syntax & Variables",
@@ -178,7 +178,7 @@ const allCourses = [
     category: "Programming",
     duration: "10 Weeks",
     level: "Intermediate",
-    price: "₹ 0",
+    
     icon: <FaLaptopCode />,
     modules: [
       "HTML/CSS/JS Basics",
@@ -194,7 +194,7 @@ const allCourses = [
     category: "Job Guarantee",
     duration: "12 Weeks",
     level: "Intermediate",
-    price: "₹ 49,999",
+  
     icon: <FaLock />,
     modules: [
       "Fundamentals of Security",
@@ -223,7 +223,7 @@ const InDemandCourses = () => {
   });
 
   return (
-    <section className="bg-[#F2F6FA] py-16 px-4 sm:px-6 lg:px-10">
+    <section id="courses" className="bg-[#F2F6FA] py-16 px-4 sm:px-6 lg:px-10">
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-[#264269]">Our Most In-Demand Courses</h2>
