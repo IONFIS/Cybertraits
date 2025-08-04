@@ -236,7 +236,7 @@ const InDemandCourses = () => {
             placeholder="Search courses..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#4A7C3E]"
+            className="w-full px-4 py-2 border border-gray-300 text-[#4a7c3e] rounded-full focus:ring-2 focus:ring-[#4a7c3e]"
           />
         </div>
 
