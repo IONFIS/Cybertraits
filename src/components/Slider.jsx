@@ -10,12 +10,29 @@ const HeroWithForm = () => {
   });
 
   const courses = [
-    "Cybersecurity Essentials",
-    "Full Stack Development",
-    "Cloud Computing",
-    "AI & Machine Learning",
-    "Data Science & Analytics",
-    "DevOps Masterclass",
+   "Ethical Hacking Fundamentals",
+
+"Network Penetration Testing",
+
+"Web Application Pentesting",
+
+"API Security & Testing",
+
+"Mobile Application Pentesting",
+
+"Active Directory Attacks",
+
+"Cloud Security & Pentesting",
+
+"Blue Team SOC Analyst",
+
+"Digital Forensics & Incident Response",
+
+"Python for Beginners",
+
+"Full Stack Web Development",
+
+"Cybersecurity Job Guarantee Program",
   ];
 
   const handleChange = (e) => {

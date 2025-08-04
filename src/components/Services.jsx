@@ -78,7 +78,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="bg-[#F2F6FA] py-16 px-4 sm:px-6 lg:px-10">
+    <section id="services" className="bg-[#F2F6FA] py-16 px-4 sm:px-6 lg:px-10">
       <div className="max-w-screen-xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-[#264269] mb-4">
           Our Services

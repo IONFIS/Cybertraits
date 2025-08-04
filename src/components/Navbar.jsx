@@ -59,49 +59,28 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="/about"
+           href="#about"
             className="block px-4 py-2 text-[#264269] hover:text-[#4A7C3E]"
           >
             About
           </a>
           <a
-            href="/services"
+            href="#services"
             className="block px-4 py-2 text-[#264269] hover:text-[#4A7C3E]"
           >
             Services
           </a>
+          <a
+            href="#courses"
+            className="block px-4 py-2 text-[#264269] hover:text-[#4A7C3E]"
+          >
+            Courses
+          </a>
 
-          {/* Dropdown */}
-          <div className="relative group">
-            <button
-              onClick={() => setPagesDropdownOpen(!pagesDropdownOpen)}
-              className="flex items-center px-4 py-2 text-[#264269] hover:text-[#4A7C3E] w-full"
-            >
-              Courses
-              <ChevronDownIcon className="w-4 h-4 ml-1" />
-            </button>
-            <div
-              className={`${
-                pagesDropdownOpen ? "block" : "hidden"
-              } md:group-hover:block absolute bg-white shadow-md rounded-md z-10 w-48 mt-1`}
-            >
-              <a
-                href="/team"
-                className="block px-4 py-2 text-[#264269] hover:bg-gray-100"
-              >
-                CEH v13
-              </a>
-              <a
-                href="/testimonial"
-                className="block px-4 py-2 text-[#264269] hover:bg-gray-100"
-              >
-                Digital Forensics
-              </a>
-            </div>
-          </div>
+         
 
           <a
-            href="/contact"
+            href="/"
             className="block px-4 py-2 text-[#264269] hover:text-[#4A7C3E]"
           >
             Contact
