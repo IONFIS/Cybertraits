@@ -248,7 +248,7 @@ const InDemandCourses = () => {
               className={`px-4 py-2 rounded-full font-medium transition ${
                 selectedFilter === filter
                   ? "bg-[#4A7C3E] text-white"
-                  : "bg-white text-[#264269] border border-gray-300 hover:bg-gray-100"
+                  : "bg-white text-[#264269] border border-neutral-300 hover:bg-gray-100"
               }`}
             >
               {filter}
@@ -261,7 +261,7 @@ const InDemandCourses = () => {
             filteredCourses.map((course) => (
               <div
                 key={course.id}
-                className="bg-white rounded-xl shadow border p-6 hover:shadow-md transition"
+                className="bg-white rounded-xl shadow border border-neutral-300 p-6 hover:shadow-md transition"
               >
                 <div className="text-[#4A7C3E] text-3xl mb-3">{course.icon}</div>
                 <h3 className="text-lg font-semibold text-[#264269]">{course.title}</h3>
