@@ -22,17 +22,47 @@ const HeroWithForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    alert("Thanks for submitting! Our counsellor will contact you soon.");
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      course: "",
-    });
+  
+    const accessKey = "3621c1db-d920-4089-ad76-524ef329187b";
+  
+    const data = {
+      access_key: accessKey,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      course: formData.course,
+    };
+  
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        alert("Thanks for submitting! Our counsellor will contact you soon.");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          course: "",
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Web3Forms Error:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
+  
 
   return (
     <section className="bg-gradient-to-r from-green-50 to-[#EAF1F8] py-12 px-4 md:px-16">
@@ -67,7 +97,9 @@ const HeroWithForm = () => {
             Get Free Career Counselling
           </h2>
 
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
+          <input type="hidden" name="access_key" value="3621c1db-d920-4089-ad76-524ef329187b"></input>
+          <input type="checkbox" name="botcheck" className="hidden" style={{display: 'None'}}></input>
             {/* Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
@@ -78,7 +110,7 @@ const HeroWithForm = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
+                className="w-full h-10 px-4 py-2 border border-gray-300 text-neutral-800 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
               />
             </div>
 
@@ -92,7 +124,7 @@ const HeroWithForm = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your phone number"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
+                className="w-full h-10 px-4 py-2 border border-gray-300 text-neutral-800 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
               />
             </div>
 
@@ -106,7 +138,7 @@ const HeroWithForm = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
+                className="w-full h-10 px-4 py-2 border border-gray-300 text-neutral-800 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
               />
             </div>
 
@@ -118,9 +150,9 @@ const HeroWithForm = () => {
                 value={formData.course}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
+                className="w-full px-4 py-2 border h-10 border-gray-300 text-neutral-800 rounded-md shadow-sm focus:ring-[#4A7C3E] focus:border-[#4A7C3E]"
               >
-                <option value="">-- Choose a course --</option>
+                <option value="" disabled selected>Select an option</option>
                 {courses.map((course, idx) => (
                   <option key={idx} value={course}>
                     {course}
@@ -143,7 +175,11 @@ const HeroWithForm = () => {
       </div>
     </section>
   );
+
+  
 };
+
+
 
 export default HeroWithForm;
 
