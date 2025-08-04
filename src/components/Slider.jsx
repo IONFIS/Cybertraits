@@ -25,43 +25,29 @@ const HeroWithForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    const accessKey = "3621c1db-d920-4089-ad76-524ef329187b";
-  
-    const data = {
-      access_key: accessKey,
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      course: formData.course,
-    };
-  
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("http://localhost:5500/send-email", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData)
       });
   
       const result = await response.json();
   
       if (result.success) {
-        alert("Thanks for submitting! Our counsellor will contact you soon.");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          course: "",
-        });
+        alert("Thanks! Our counsellor will contact you soon.");
+        setFormData({ name: "", phone: "", email: "", course: "" });
       } else {
         alert("Something went wrong. Please try again.");
       }
-    } catch (error) {
-      console.error("Web3Forms Error:", error);
-      alert("An error occurred. Please try again.");
+    } catch (err) {
+      alert("Server error. Please try again later.");
+      console.error(err);
     }
   };
+  
   
 
   return (
