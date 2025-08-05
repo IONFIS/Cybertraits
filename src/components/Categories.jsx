@@ -21,15 +21,12 @@ const companyData = [
   },
   {
     name: "Deloitte",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Deloitte_Logo.png",
+    logo: "https://logos-world.net/wp-content/uploads/2021/08/Deloitte-Logo.png",
   },
-  {
-    name: "PwC",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/PwC_Logo.svg",
-  },
+ 
   {
     name: "Accenture",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Accenture-logo.svg",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxWziQu1OLJ6NW_vR4CaQEAL5qtlMAiLI2yA&s",
   },
   {
     name: "Oracle",
@@ -37,11 +34,11 @@ const companyData = [
   },
   {
     name: "Cisco",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cisco_logo_blue_2016.svg",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png",
   },
   {
     name: "EY",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d0/EY_logo_2019.svg",
+    logo: "https://asset.brandfetch.io/idB8IjfqRq/id7PaFT6Jt.png",
   },
 ];
 

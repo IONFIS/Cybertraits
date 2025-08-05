@@ -54,7 +54,7 @@ const WhyCybertraits = () => {
 
           <div>
             <a
-              href="/contact"
+              href="#contact"
               className="inline-block bg-[#4A7C3E] text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition duration-300"
             >
               Talk to an Expert
