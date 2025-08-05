@@ -49,47 +49,49 @@ const HeroWithForm = () => {
     }, 500);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const accessKey = "3621c1db-d920-4089-ad76-524ef329187b";
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const data = {
-      access_key: accessKey,
-      ...formData,
-    };
+  try {
+    const response = await fetch("https://cybertraits-psi.vercel.app/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const result = await response.json();
 
-      const result = await response.json();
-
-      if (result.success) {
-        showPopup("✅ Thanks for submitting! Our counsellor will contact you soon.", "success");
-        setFormData({ name: "", phone: "", email: "", course: "" });
-      } else {
-        showPopup("❌ Something went wrong. Please try again.", "error");
-      }
-    } catch (error) {
-      console.error("Web3Forms Error:", error);
-      showPopup("❌ An error occurred. Please try again later.", "error");
+    if (result.success) {
+      showPopup("✅ Thanks! Our counsellor will contact you soon.", "success");
+      setFormData({ name: "", phone: "", email: "", course: "" });
+    } else {
+      showPopup("❌ Something went wrong. Please try again.", "error");
     }
-  };
+  } catch (err) {
+    showPopup("❌ Server error. Please try again later.", "error");
+    console.error(err);
+  }
+};
+
+  
+  
 
   return (
     <section className="relative bg-gradient-to-r from-green-50 to-[#EAF1F8] py-12 px-4 md:px-16">
       {/* Popup Notification */}
       {popup.visible && (
-        <div className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-md shadow-lg text-sm font-medium transition-all duration-300
-          ${popup.type === "success" ? "bg-green-100 text-green-800 border border-green-300" : "bg-red-100 text-red-800 border border-red-300"}`}>
-          {popup.message}
-        </div>
-      )}
+  <div
+    className={`fixed top-40 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-md shadow-xl text-sm font-medium transition-all duration-500 ease-in-out
+      ${popup.type === "success"
+        ? "bg-green-100 text-green-800 border border-green-300"
+        : "bg-red-100 text-red-800 border border-red-300"}`}
+  >
+    {popup.message}
+  </div>
+)}
+
 
       <div className="max-w-7xl mx-auto md:flex md:items-start md:gap-10">
         {/* Left Content */}
